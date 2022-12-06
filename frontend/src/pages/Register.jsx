@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { register } from "../features/auth/authSlice";
 import { FaUser } from "react-icons/fa";
-import {toast} from 'react-toastify'
+import { toast } from "react-toastify";
 
 function Register() {
   const [formData, setFormData] = useState({
@@ -12,6 +14,12 @@ function Register() {
 
   const { name, email, password, confirmPassword } = formData;
 
+  const dispatch = useDispatch();
+
+  const { user, isloading, isSuccess, message } = useSelector(
+    (state) => state.auth
+  );
+
   const handleChange = (e) => {
     setFormData((prevState) => ({
       ...prevState,
@@ -19,13 +27,21 @@ function Register() {
     }));
   };
 
-  const handleSubmit = (e) =>{
+  const handleSubmit = (e) => {
     e.preventDefault();
 
-    if(password !== confirmPassword){
-        toast.error("Passwords do not match")
+    if (password !== confirmPassword) {
+      toast.error("Passwords do not match");
+    }else{
+        const userData = {
+            name,
+            email,
+            password
+        }
+
+        dispatch(register(userData))
     }
-  }
+  };
 
   return (
     <>
@@ -84,7 +100,7 @@ function Register() {
           </div>
           <div className="form-group">
             <button type="submit" className="btn btn-block">
-                Submit
+              Submit
             </button>
           </div>
         </form>

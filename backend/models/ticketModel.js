@@ -9,7 +9,7 @@ const ticketSchema = mongoose.Schema({
     product : {
         type  : String,
         required : [true, 'Please select a product'],
-        enum : ['Xiaomi 12T', 'Xiaomi 11', 'Mi 11','Mi 10', 'Mi 9',' Xiaomi Smart Band 7', 'Redmi Pad', 'RedmiBook 15','Mi True Wireless Earphones 2'],
+        enum : ['Xiaomi 12', 'Xiaomi 11', 'Mi 11','Mi 10', 'Mi 9',' Xiaomi Smart Band 7', 'Redmi Pad', 'RedmiBook 15','Mi True Wireless Earphones 2'],
     },
     description : {
         type  : String,

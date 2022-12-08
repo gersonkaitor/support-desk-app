@@ -74,8 +74,8 @@ function NewTicket() {
               <option value="Xiaomi Smart Band 7">Xiaomi Smart Band 7</option>
               <option value="Redmi Pad">Redmi Pad</option>
               <option value="RedmiBook 15">RedmiBook 15</option>
-              <option value="Mi True Wireless Earphone 2">
-                Mi True Wireless Earphone 2
+              <option value="Mi True Wireless Earphones 2">
+              Mi True Wireless Earphones 2
               </option>
             </select>
           </div>

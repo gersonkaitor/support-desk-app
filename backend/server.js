@@ -15,24 +15,27 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.get("/", (req, res) => {
-  res.status(200).json({ message: "Welcome to Suppot Desk APP" });
+  res.status(200).json({ message: "Welcome to Support Desk APP" });
 });
 
 //Routes
 app.use("/api/users", require("./routes/userRoutes"));
 app.use("/api/tickets", require("./routes/ticketRoutes"));
 
-//Serve Frontend
-// if(process.env.NODE_ENV === 'production'){
-//   //Set build folder as static
-//   app.use(express.static(path.join(__dirname, '../frontend/build')))
+// app.use("/api/users", require(path.join(__dirname, 'backend', 'routes','userRoutes')))
+// app.use("/api/tickets", require(path.join(__dirname, 'backend', 'routes','ticketRoutes')))
 
-//   app.get('*',(req,res) => res.sendFile(__dirname, '../','frontend', 'build', 'index.html'))
-// }else{
-//   app.get("/", (req, res) => {
-//     res.status(200).json({ message: "Welcome to Suppot Desk APP" });
-//   });
-// }
+//Serve Frontend
+if(process.env.NODE_ENV === 'production'){
+  //Set build folder as static
+  app.use(express.static(path.join(__dirname, '../frontend/build')))
+
+  app.get('*',(req,res) => res.sendFile(__dirname, '../','frontend', 'build', 'index.html'))
+}else{
+  app.get("/", (req, res) => {
+    res.status(200).json({ message: "Welcome to Support Desk APP" });
+  });
+}
 
 app.use(errorHandler);
 

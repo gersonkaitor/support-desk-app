@@ -12,10 +12,10 @@
     ],
   
 
-    "routes": [
+    "rewrites": [
       {
         "source": "/(.*)",
-        "destination": "/"
+        "destination": "/backend/server.js"
       }
     ]
   }

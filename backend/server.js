@@ -14,16 +14,16 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-// app.get("/", (req, res) => {
-//   res.status(200).json({ message: "Welcome to Support Desk APP" });
-// });
+app.get("/", (req, res) => {
+  res.status(200).json({ message: "Welcome to Support Desk APP" });
+});
 
 //Routes
 // app.use("/api/users", require("./routes/userRoutes"));
 // app.use("/api/tickets", require("./routes/ticketRoutes"));
 
-app.use("/api/users", require(path.join(__dirname, 'api', 'routes','userRoutes')))
-app.use("/api/tickets", require(path.join(__dirname, 'api', 'routes','ticketRoutes')))
+// app.use("/api/users", require(path.join(__dirname, 'api', 'routes','userRoutes')))
+// app.use("/api/tickets", require(path.join(__dirname, 'api', 'routes','ticketRoutes')))
 
 //Serve Frontend
 if(process.env.NODE_ENV === 'production'){

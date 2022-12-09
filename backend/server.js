@@ -19,11 +19,11 @@ app.use(express.urlencoded({ extended: false }));
 // });
 
 //Routes
-// app.use("/api/users", require("./routes/userRoutes"));
-// app.use("/api/tickets", require("./routes/ticketRoutes"));
+app.use("/api/users", require("./routes/userRoutes"));
+app.use("/api/tickets", require("./routes/ticketRoutes"));
 
-app.use("/api/users", require(path.join(__dirname, 'backend', 'routes','userRoutes')))
-app.use("/api/tickets", require(path.join(__dirname, 'backend', 'routes','ticketRoutes')))
+// app.use("/api/users", require(path.join(__dirname, 'backend', 'routes','userRoutes')))
+// app.use("/api/tickets", require(path.join(__dirname, 'backend', 'routes','ticketRoutes')))
 
 //Serve Frontend
 if(process.env.NODE_ENV === 'production'){

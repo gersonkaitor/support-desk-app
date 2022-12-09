@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "proxy" : "http://localhost:5000",
-  "homepage": "https://support-desk-app-eight.vercel.app/",
+  "homepage": "http://support-desk-app-coral.vercel.app/",
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.1",
     "@testing-library/jest-dom": "^5.16.5",

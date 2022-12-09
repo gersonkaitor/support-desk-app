@@ -26,16 +26,16 @@ app.use("/api/tickets", require("./routes/ticketRoutes"));
 // app.use("/api/tickets", require(path.join(__dirname, 'backend', 'routes','ticketRoutes')))
 
 //Serve Frontend
-if(process.env.NODE_ENV === 'production'){
+//if(process.env.NODE_ENV === 'production'){
   //Set build folder as static
   app.use(express.static(path.join(__dirname, '../frontend/build')))
 
   app.get('*',(req,res) => res.sendFile(__dirname, '../frontend/build/index.html'))
-}else{
-  app.get("/", (req, res) => {
-    res.status(200).json({ message: "Welcome to Support Desk APP" });
-  });
-}
+//}else{
+//  app.get("/", (req, res) => {
+//    res.status(200).json({ message: "Welcome to Support Desk APP" });
+//  });
+//}
 
 app.use(errorHandler);
 
